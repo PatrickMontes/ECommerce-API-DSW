@@ -1,0 +1,108 @@
+﻿@page "/dashboard"
+
+
+@inject IDashboardService iDashboardService;
+
+@using Microsoft.AspNetCore.Authorization;
+@attribute [Authorize(Roles = "Administrador")];
+
+<div class="row mt-4">
+
+    <div class="col-sm-6 mb-3">
+        <div class="card border-5 border-bottom-0 border-top-0 border-end-0 shadow border-primary p-4">
+            <div class="row align-items-center">
+                <div class="col ms-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        Total Ingresos
+                    </div>
+                    <div class="h5 mb-0 fw-bold text-muted">
+                        S/. @dashboardDTO.TotalIngreso
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 mb-3">
+        <div class="card border-5 border-bottom-0 border-top-0 border-end-0 shadow border-success p-4">
+            <div class="row align-items-center">
+                <div class="col ms-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        Total Ventas
+                    </div>
+                    <div class="h5 mb-0 fw-bold text-muted">
+                        @dashboardDTO.TotalVentas
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-basket2-fill" viewBox="0 0 16 16">
+                        <path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 mb-3">
+        <div class="card border-5 border-bottom-0 border-top-0 border-end-0 shadow border-warning p-4">
+            <div class="row align-items-center">
+                <div class="col ms-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        Total Clientes
+                    </div>
+                    <div class="h5 mb-0 fw-bold text-muted">
+                        @dashboardDTO.TotalClientes
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 mb-3">
+        <div class="card border-5 border-bottom-0 border-top-0 border-end-0 shadow border-info p-4">
+            <div class="row align-items-center">
+                <div class="col ms-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                        Total Productos
+                    </div>
+                    <div class="h5 mb-0 fw-bold text-muted">
+                        @dashboardDTO.TotalProductos
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                        <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@code {
+    private DashboardDTO dashboardDTO = new DashboardDTO();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await iDashboardService.Resumen();
+
+        if (response.Correcto)
+        {
+            dashboardDTO = (DashboardDTO)response.Resultado!;
+        }
+    }
+}
