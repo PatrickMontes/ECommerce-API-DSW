@@ -1041,3 +1041,4 @@ C:\Users\User\Downloads\Proyecto-DSW-ECommerce\Ecommerce.DSW\WEB\obj\Debug\net8.
 C:\Users\User\Downloads\Proyecto-DSW-ECommerce\Ecommerce.DSW\WEB\obj\Debug\net8.0\compressed\cdmptguw9d.gz
 C:\Users\User\Downloads\Proyecto-DSW-ECommerce\Ecommerce.DSW\WEB\obj\Debug\net8.0\compressed\pia67o9v99.gz
 C:\Users\User\Downloads\Proyecto-DSW-ECommerce\Ecommerce.DSW\WEB\obj\Debug\net8.0\compressed\h31lk1is5s.gz
+C:\Users\User\Downloads\Proyecto-DSW-ECommerce\Ecommerce.DSW\WEB\obj\Debug\net8.0\WEB.sourcelink.json
